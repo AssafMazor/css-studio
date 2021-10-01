@@ -1,0 +1,336 @@
+<html>
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/hot-sneaks/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
+
+
+    <link rel="stylesheet" href="./css-studio.css">
+
+</head>
+
+<body>
+<div class="wrapper">
+
+    <div class="squares-panle">
+
+        <div class="btn-plus-wrap">
+
+            <div class="plus-btn" onclick="addSquare()">
+            </div>
+
+
+
+        </div>
+
+    </div> 
+    
+    <div class="left-panle">
+
+        <div class="main-title-wrap">
+
+            <div class="main-title selected" onclick="openMenu()">Style
+            </div>
+    
+            <div class="main-title-contant" onclick="openContent()">Content
+            </div>
+        </div>
+        
+        <div class="menu-panle panle">
+
+            <div class="title-wrap">
+
+                <img class="bottom-btn" src="">
+
+                <div class="title">geometry
+                </div>
+
+            </div>
+
+            <div class="geometry-panle">
+
+                <div class="sub-title">Size
+                </div>
+
+                <div class="size-row">
+
+                    <div class="width-row">
+
+                        <div class="inside">
+
+                            <div class="logo-wrap">
+
+                                <div class="logo">W:
+                                </div>    
+    
+                            </div>
+     
+                            <input type="text" class="input width" onblur="checkWidth()">
+
+                        </div>
+
+                    </div>
+
+                    <div class="height-row">
+
+                        <div class="inside">
+
+                            <div class="logo-wrap">
+
+                                <div class="logo">H:
+                                </div>    
+    
+                            </div>
+     
+                            <input type="text" class="input height" onblur="checkHeight()">
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                <div class="sub-title">position
+                </div>
+
+                <div class="position-row">
+
+                    <div class="left-row">
+
+                        <div class="inside">
+
+                            <div class="logo-wrap">
+
+                                <div class="logo">L:
+                                </div>    
+    
+                            </div>
+     
+                            <input type="text" class="input left"  onblur="checkLeft()">
+
+                        </div>
+
+                       
+
+                    </div>
+
+                    <div class="top-row">
+
+                        <div class="inside">
+
+                            <div class="logo-wrap">
+
+                                <div class="logo">T:
+                                </div>    
+    
+                            </div>
+     
+                            <input type="text" class="input top" onblur="checkTop()">    
+  
+                        </div>
+
+                     
+                    </div>
+                    
+                </div>             
+
+            </div>
+
+            <div class="title-wrap">
+
+                <img class="bottom-btn" src="">
+
+                <div class="title">Border
+                </div>
+
+            </div>
+
+            <div class="border-panle">
+
+                <div class="sub-title">Color
+                </div>
+
+                <div class="border-color-row">
+
+                    <div class="inside">
+
+                        <div class="border-color">
+                        </div>
+    
+                        <input type="text" class="color-picker" id="colorpicker-border-color">       
+
+                    </div>
+
+                   
+                </div>
+
+                <div class="border-size-title">Border Width
+                </div>
+
+                <div class="border-color-row">
+
+                    <div class="inside">
+
+                        <input type="text" class="border-width" onblur="checkBorderWidth()">
+    
+                    </div>
+
+                   
+                </div>
+
+            </div>
+
+            <div class="title-wrap">
+
+                <img class="bottom-btn" src="">
+
+                <div class="title">Background
+                </div>
+
+            </div>
+
+            <div class="background-panle">
+
+                <div class="sub-title">Color
+                </div>
+
+                <div class="background-color-row">
+
+                    <div class="inside">
+
+                        <div class="background-color">
+                        </div>
+    
+                        <input type="text" class="color-picker" id="colorpicker-background-color">       
+
+                    </div>
+
+                   
+                </div>
+
+                <div class="Background-size-title">Background Img
+                </div>
+
+                <div class="border-color-row">
+
+                    <div class="inside">
+
+                        <input type="text" class="background-img">
+    
+                    </div>
+
+                   
+                </div>
+
+            </div>
+
+            <div class="z-index-panle">
+
+                <div class="index-title">Z Index
+                </div>
+
+                <div class="z-index-row">
+
+                    <div class="z-index-num">
+                    </div>
+
+                    <div class="plus-wrap" onclick="plusIndexClick()">
+
+                        <div class="btn-plus-index">
+                        </div>
+
+                    </div>
+
+                    <div class="minus-wrap">
+
+                        <div class="btn-minus" onclick="minusIndexClick()">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="btns-wrap">
+
+                <div class="clear-wrap">
+    
+                    <div class="clear-btn" onclick="clearSquars()">clear Squares
+                    </div>
+    
+                </div>
+    
+            </div>   
+
+        </div>
+    </div>
+
+    <div class="content-menu">
+
+        <div class="content-panle hide">
+
+            <div class="title-wrap">
+
+                <img class="bottom-btn" src="">
+
+                <div class="title">Content text
+                </div>
+
+            </div>
+
+            <textarea class="content" oninput="onTextAreaChange()" onblur="onTextAreaBlur()">
+            </textarea>
+            
+            <div class="num-lengths">
+
+                <div class="num-of">0
+                </div>
+                
+                <div class="of">/
+                </div>
+    
+                <div class="num">500
+                </div>
+
+            </div>
+
+          
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="./css-studio.js">
+</script>
+
+
+
+</body>
+</html>
