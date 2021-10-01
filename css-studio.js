@@ -25,14 +25,16 @@ function addSquare(){
         "zIndex":""
     }
     selectedSquare = total
-    dragSquares(selectedSquare)
-    renderSquareList();
+    adddragEvent(selectedSquare)
+    addResizableEvent(selectedSquare)
+    renderSquareList(selectedSquare);
     renderSquareProps(total)
     $(".squares-panle .square").removeClass("selected-square");
     $(`.squares-panle .square${total}`).addClass("selected-square");
 }
 
-function dragSquares(x){
+function adddragEvent(x){
+
     $(`.square${x}`).draggable({
         start: function(e , ui) {
           ui.helper.addClass("dragging");
@@ -44,6 +46,23 @@ function dragSquares(x){
           renderSquareProps(x)
         }
     });
+}
+
+function addResizableEvent(x){
+    console.log($(`.square${x}`));
+    $(`.square${x}`).resizable({
+        ghost: true,
+        start: function(e , ui) {
+            console.log("stop......")
+           // ui.helper.addClass("resizing");
+          },
+        stop: function(event, ui) { 
+            console.log("stop......")
+            squareList[x]["width"] =  ui.size.width;
+            squareList[x]["height"] =  ui.size.height;
+            renderSquareProps(x)
+        }
+      });
 }
 
 //----------------------------------
@@ -86,10 +105,11 @@ function renderSquareProps(id){
 }  
 
 function onSquareClick(id){
+    console.log(id)
     $(".squares-panle .square").removeClass("selected-square");
     $(`.squares-panle .square${id}`).addClass("selected-square");
-    selectedSquare = id
-    dragSquares(id)
+    adddragEvent(id)
+    addResizableEvent(id)
     renderSquareProps(id)
 }
 
